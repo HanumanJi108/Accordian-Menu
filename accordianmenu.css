@@ -1,0 +1,113 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+
+    /* Variables */
+
+    --darkgrey: #333;
+    --lightgreen: #1ece76;
+}
+
+body {
+    min-width: 100vw;
+    min-height:100vh ;
+
+    border: 3px solid red;
+
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordianMenu {
+    /* border: solid black; */
+    color: ghostwhite;
+    width: 250px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.tabs {
+    display: block;
+    margin-bottom: 0.05rem;
+}
+
+.options {
+    display: block;
+    background-color: var(--lightgreen);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding:.7rem 1.5rem;
+    height: 2.5rem;
+    position: relative;
+}
+
+/* .options::after {
+    position: absolute;
+    left: 1.5rem;
+    bottom: -0.5rem;
+    background-color: var(--lightgreen);
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg);
+} */
+
+.submenu {
+
+    background-color: var(--darkgrey);
+    color: honeydew;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: max-height 0.5s ease-in;
+    transition: 0.01s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.options:focus + .submenu{
+    max-height: 12rem;
+}
+
+.links {
+    text-decoration: none;
+    /* background-color: yellow; */
+    color: ghostwhite ;
+    overflow: hidden;
+    padding: .5rem 2.5rem;
+    position: relative;
+}
+
+.links::before {
+    background-color: var(--lightgreen);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    /* width: 1rem;
+    height: 100%; */
+    width: 0.3rem;
+    height: 100%;
+    opacity: 0;
+}
+
+.links:hover::before {
+    opacity: 1;
+}
+
+.options label:hover {
+    cursor: pointer;
+}
